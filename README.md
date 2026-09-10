@@ -34,10 +34,22 @@ npm run report
 
 - Successful login
 - Invalid login credentials
+- Valid email with an incorrect password
 - Signup up to email verification
 - Invalid signup email
 - Missing signup consent
 - Weak signup password
+
+## GitHub Actions
+
+The workflow runs on push or pull request to `main`. It can also be run manually from the Actions tab.
+
+Set these repository secrets before running it:
+
+- `SLEEKFLOW_EMAIL`
+- `SLEEKFLOW_PASSWORD`
+
+The HTML report is available in the workflow artifacts after the test run.
 
 ## Notes
 
