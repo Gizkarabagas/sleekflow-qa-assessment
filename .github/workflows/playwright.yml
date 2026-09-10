@@ -29,6 +29,12 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Check required environment variables
+        run: |
+          test -n "$SLEEKFLOW_EMAIL" || (echo "SLEEKFLOW_EMAIL is missing" && exit 1)
+          test -n "$SLEEKFLOW_PASSWORD" || (echo "SLEEKFLOW_PASSWORD is missing" && exit 1)
+          echo "Required secrets are available"
+
       - name: Run Playwright tests
         run: npm run test:chromium
 
